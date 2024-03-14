@@ -1,16 +1,116 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.control.Label?>
-<?import javafx.scene.layout.VBox?>
-
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
-<VBox alignment="CENTER" spacing="20.0" xmlns:fx="http://javafx.com/fxml"
-      fx:controller="com.example.notesnap.HelloController">
-    <padding>
-        <Insets bottom="20.0" left="20.0" right="20.0" top="20.0"/>
-    </padding>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-    <Label fx:id="welcomeText"/>
-    <Button text="Hello!" onAction="#onHelloButtonClick"/>
+<VBox alignment="CENTER" prefHeight="562.0" prefWidth="759.0" spacing="20.0" style="-fx-background-color: #F2F2F2;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.notesnap.HelloController">
+    <padding>
+        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+    </padding>
+   <children>
+      <Pane prefHeight="560.0" prefWidth="730.0">
+         <children>
+            <Pane fx:id="viewNotas" layoutX="18.0" layoutY="96.0" prefHeight="431.0" prefWidth="693.0" visible="false">
+               <children>
+                  <Label layoutX="14.0" layoutY="14.0" text="Listado de notas" textFill="#344c7b">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+                  <ScrollPane layoutX="8.0" layoutY="48.0" prefHeight="375.0" prefWidth="681.0">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="375.0" prefWidth="674.0">
+                           <children>
+                              <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" prefHeight="145.0" prefWidth="179.0" style="-fx-background-color: #6F98D6;" text="agregar nota" textFill="WHITE">
+                                 <font>
+                                    <Font name="Berlin Sans FB" size="25.0" />
+                                 </font></Button>
+                           </children>
+                        </AnchorPane>
+                    </content>
+                  </ScrollPane>
+               </children>
+            </Pane>
+            <Pane prefHeight="63.0" prefWidth="739.0">
+               <children>
+                  <Label layoutX="14.0" layoutY="21.0" text="Quick note" textFill="#344c7b">
+                     <font>
+                        <Font name="Calibri Bold" size="20.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="btn1" layoutX="377.0" layoutY="14.0" mnemonicParsing="false" onAction="#changeViewsNote" prefHeight="35.0" prefWidth="159.0" style="-fx-border-color: #6F98D6; -fx-background-color: transparent; -fx-border-radius: 3;" text="notas" textFill="#344c7b">
+                     <font>
+                        <Font name="Calibri" size="18.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Button fx:id="btn2" layoutX="204.0" layoutY="14.0" mnemonicParsing="false" onAction="#changeViewsTask" prefHeight="35.0" prefWidth="159.0" style="-fx-border-radius: 3; -fx-background-color: transparent; -fx-border-color: #6F98D6;" text="tareas" textFill="#344c7b">
+                     <font>
+                        <Font name="Calibri" size="18.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+               </children>
+            </Pane>
+            <Pane fx:id="view_tareas" layoutX="5.0" layoutY="89.0" prefHeight="451.0" prefWidth="730.0">
+               <children>
+                  <Button layoutX="108.0" layoutY="37.0" mnemonicParsing="false" onAction="#OpenFormCreateNewTask" prefHeight="86.0" prefWidth="515.0" style="-fx-border-color: transparent; -fx-background-color: #ABC4E9; -fx-border-radius: 2;" text="Agregar nueva tarea" textFill="#344c7b">
+                     <font>
+                        <Font size="20.0" />
+                     </font>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                  </Button>
+                  <Label layoutX="108.0" layoutY="153.0" text="Tareas pendientes:">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <ScrollPane layoutX="108.0" layoutY="189.0" prefHeight="242.0" prefWidth="515.0">
+                    <content>
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="239.0" prefWidth="513.0" style="-fx-border-color: transparent;" />
+                    </content>
+                  </ScrollPane>
+                  <Label layoutX="238.0" layoutY="153.0" text="0">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Label>
+                  <Pane fx:id="CuadroCrearTareas" layoutX="125.0" layoutY="22.0" prefHeight="220.0" prefWidth="482.0" style="-fx-background-color: #FFFFFF; -fx-border-radius: 4;" visible="false">
+                     <children>
+                        <Label layoutX="14.0" layoutY="14.0" text="Crear nueva tarea" textFill="#344c7b">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <TextField layoutX="13.0" layoutY="68.0" prefHeight="54.0" prefWidth="457.0" promptText="ingrese la tarea aqui..." style="-fx-border-color: #4281DC; -fx-border-radius: 2;" />
+                        <Button layoutX="360.0" layoutY="163.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="107.0" style="-fx-background-color: #4281DC; -fx-border-radius: 2;" text="guardar" textFill="WHITE">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor></Button>
+                        <Button layoutX="242.0" layoutY="163.0" mnemonicParsing="false" onAction="#CloseFormCreateNewTask" prefHeight="30.0" prefWidth="107.0" style="-fx-background-color: transparent; -fx-border-color: #E93535;" text="cancelar" textFill="#e93535">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor></Button>
+                     </children>
+                  </Pane>
+               </children>
+            </Pane>
+            <Pane layoutX="18.0" layoutY="78.0" prefHeight="6.0" prefWidth="693.0" style="-fx-background-color: #6F98D6;" />
+         </children>
+      </Pane>
+   </children>
 </VBox>

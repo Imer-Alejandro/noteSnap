@@ -1,0 +1,11 @@
+#btn1,#btn2:active{
+    --fxbackground-color:#91B4E9 ;
+}
+
+#btn1,#btn2:focus{
+    --fxbackground-color:#91B4E9 ;
+}
+
+
+
+
