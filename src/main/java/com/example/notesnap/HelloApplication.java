@@ -17,7 +17,7 @@ public class HelloApplication extends Application {
         stage.setHeight(600);
 
 
-        stage.setTitle("Quick note");
+        stage.setTitle("Quick note ");
         stage.setScene(scene);
         stage.getScene().getStylesheets().add(String.valueOf(getClass().getResource("styles.css")));
 
