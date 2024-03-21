@@ -18,7 +18,7 @@
    <children>
       <Pane prefHeight="560.0" prefWidth="730.0">
          <children>
-            <Pane fx:id="viewNotas" layoutX="18.0" layoutY="96.0" prefHeight="431.0" prefWidth="693.0" visible="false">
+            <Pane fx:id="viewNotas" layoutX="18.0" layoutY="96.0" prefHeight="414.0" prefWidth="683.0">
                <children>
                   <Label layoutX="14.0" layoutY="14.0" text="Listado de notas" textFill="#344c7b">
                      <font>
@@ -27,16 +27,37 @@
                   </Label>
                   <ScrollPane layoutX="8.0" layoutY="48.0" prefHeight="375.0" prefWidth="681.0">
                     <content>
-                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="375.0" prefWidth="674.0">
+                      <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="362.0" prefWidth="674.0">
                            <children>
                               <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" prefHeight="145.0" prefWidth="179.0" style="-fx-background-color: #6F98D6;" text="agregar nota" textFill="WHITE">
                                  <font>
                                     <Font name="Berlin Sans FB" size="25.0" />
                                  </font></Button>
+                              <Pane layoutX="223.0" layoutY="14.0" prefHeight="148.0" prefWidth="197.0" />
                            </children>
                         </AnchorPane>
                     </content>
                   </ScrollPane>
+                  <Pane fx:id="CuadroCrearTareas1" layoutX="135.0" layoutY="32.0" prefHeight="220.0" prefWidth="482.0" style="-fx-background-color: #FFFFFF; -fx-border-radius: 4; -fx-border-color: gray;" visible="false">
+                     <children>
+                        <Label layoutX="14.0" layoutY="14.0" text="Crear nueva nota" textFill="#344c7b">
+                           <font>
+                              <Font size="18.0" />
+                           </font>
+                        </Label>
+                        <TextField layoutX="13.0" layoutY="68.0" prefHeight="54.0" prefWidth="457.0" promptText="ingrese la nota aqui..." style="-fx-border-color: #4281DC; -fx-border-radius: 2;" />
+                        <Button layoutX="360.0" layoutY="163.0" mnemonicParsing="false" prefHeight="30.0" prefWidth="107.0" style="-fx-background-color: #4281DC; -fx-border-radius: 2;" text="guardar" textFill="WHITE">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                        <Button layoutX="242.0" layoutY="163.0" mnemonicParsing="false" onAction="#CloseFormCreateNewTask" prefHeight="30.0" prefWidth="107.0" style="-fx-background-color: transparent; -fx-border-color: #E93535;" text="cancelar" textFill="#e93535">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                     </children>
+                  </Pane>
                </children>
             </Pane>
             <Pane prefHeight="63.0" prefWidth="739.0">
@@ -64,7 +85,7 @@
                   </Button>
                </children>
             </Pane>
-            <Pane fx:id="view_tareas" layoutX="5.0" layoutY="89.0" prefHeight="451.0" prefWidth="730.0">
+            <Pane fx:id="view_tareas" layoutX="5.0" layoutY="89.0" prefHeight="451.0" prefWidth="730.0" visible="false">
                <children>
                   <Button layoutX="108.0" layoutY="37.0" mnemonicParsing="false" onAction="#OpenFormCreateNewTask" prefHeight="86.0" prefWidth="515.0" style="-fx-border-color: transparent; -fx-background-color: #ABC4E9; -fx-border-radius: 2;" text="Agregar nueva tarea" textFill="#344c7b">
                      <font>
@@ -89,7 +110,7 @@
                         <Font size="15.0" />
                      </font>
                   </Label>
-                  <Pane fx:id="CuadroCrearTareas" layoutX="125.0" layoutY="22.0" prefHeight="220.0" prefWidth="482.0" style="-fx-background-color: #FFFFFF; -fx-border-radius: 4;" visible="false">
+                  <Pane fx:id="CuadroCrearTareas" layoutX="125.0" layoutY="22.0" prefHeight="220.0" prefWidth="482.0" style="-fx-background-color: #FFFFFF; -fx-border-radius: 4; -fx-border-color: gray;" visible="false">
                      <children>
                         <Label layoutX="14.0" layoutY="14.0" text="Crear nueva tarea" textFill="#344c7b">
                            <font>
